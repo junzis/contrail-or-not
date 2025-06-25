@@ -47,7 +47,7 @@ pd.DataFrame.from_records(
 from traffic.core import Airspace
 
 acc_table = (
-    pd.read_table("data/europe_acc.md", sep="|", header=0, skiprows=[1])
+    pd.read_table("data/europe_acc.txt", sep="|", header=0, skiprows=[1])
     .rename(columns=str.strip)
     .eval("Designator = Designator.str.strip()")
     .eval("Name = Name.str.strip()")[["Designator", "Name"]]
@@ -125,19 +125,19 @@ def occupancy_flight(flight: Flight) -> None | pd.DataFrame:
 df = (
     t.iterate_lazy()
     .pipe(occupancy_flight)
-    .eval(desc="", max_workers=24, cache_file="data/occupancy_original.parquet")
+    .eval(desc="", max_workers=24, cache_file="data/cache/occupancy_original.parquet")
 )
 
 df03 = (
     t03.iterate_lazy()
     .pipe(occupancy_flight)
-    .eval(desc="", max_workers=24, cache_file="data/occupancy_03.parquet")
+    .eval(desc="", max_workers=24, cache_file="data/cache/occupancy_03.parquet")
 )
 
 df06 = (
     t06.iterate_lazy()
     .pipe(occupancy_flight)
-    .eval(desc="", max_workers=24, cache_file="data/occupancy_06.parquet")
+    .eval(desc="", max_workers=24, cache_file="data/cache/occupancy_06.parquet")
 )
 
 # %%

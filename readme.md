@@ -1,4 +1,4 @@
-# Contrail Optimization and Analysis
+# Code and scripts for the "contrail, or not contrail" paper
 
 This repository contains the code processing pipeline for the analyses presented in the paper associated with the paper: **Contrail, or not contrail, that is the question: the “feasibility” of climate-optimal routing**.
 
@@ -25,7 +25,7 @@ This repository contains the code processing pipeline for the analyses presented
 Install dependencies (example using pip):
 
 ```bash
-pip install openap openap-top fastmeteo traffic
+pip install openap==2.3 openap-top==1.8 fastmeteo==1.1.0 traffic==2.12
 ```
 
 ## Notes

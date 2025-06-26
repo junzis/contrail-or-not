@@ -364,10 +364,10 @@ flight_opt_arpege_06 = t_example[f"{base_id}_arpege_06"]
 colors = ["blue", "tab:blue", "tab:green", "k"]
 
 labels = [
-    "actual flight",
-    "fuel optimal",
     "contrail (era5, c=0.3)",
     "contrail (era5, c=0.6)",
+    "fuel optimal",
+    "actual flight",
 ]
 
 plot_costs_grid_with_flights(
@@ -390,10 +390,10 @@ plot_costs_grid_with_flights(
 # )
 
 labels = [
-    "actual flight",
-    "fuel optimal",
     "contrail (arpege, c=0.3)",
     "contrail (arpege, c=0.6)",
+    "fuel optimal",
+    "actual flight",
 ]
 
 plot_costs_grid_with_flights(
@@ -527,7 +527,7 @@ plot_costs_grid_with_flights(
     df_cost=df_cost_era5,
     grid_color="Reds",
     ncols=3,
-    nrows=1,
+    nrows=2,
     legend_loc="lower left",
 )
 
@@ -544,7 +544,7 @@ plot_costs_grid_with_flights(
     df_cost=df_cost_arpege,
     grid_color="RdPu",
     ncols=3,
-    nrows=1,
+    nrows=2,
     legend_loc="lower left",
 )
 
